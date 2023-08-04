@@ -35,13 +35,13 @@ mapped_reads <- 0:100
 # Create a table following the calculation method of CoverM.
 coverm <- data.frame(mapped_reads) %>% 
   mutate(mapped_bases = mapped_reads * read_len) %>% 
-  mutate(tot_mapped_reads = mapped_reads_A + mapped_reads) %>% 
   mutate(avg_cov_B = mapped_bases / size_B) %>% 
   mutate(avg_cov_C = mapped_bases / size_C) %>%
   mutate(avg_cov_D = mapped_bases / size_D) %>%
   mutate(cov_A_with_B = avg_cov_A / (avg_cov_A + avg_cov_B)) %>% 
   mutate(cov_A_with_C = avg_cov_A / (avg_cov_A + avg_cov_C)) %>%
   mutate(cov_A_with_D = avg_cov_A / (avg_cov_A + avg_cov_D)) %>%
+  mutate(tot_mapped_reads = mapped_reads_A + mapped_reads) %>% 
   mutate(relabu_A_with_B = cov_A_with_B * tot_mapped_reads / tot_reads) %>% 
   mutate(relabu_A_with_C = cov_A_with_C * tot_mapped_reads / tot_reads) %>% 
   mutate(relabu_A_with_D = cov_A_with_D * tot_mapped_reads / tot_reads)
