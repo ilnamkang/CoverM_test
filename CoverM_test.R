@@ -9,28 +9,32 @@ library(tidyverse)
 
 ## Metagenome
 tot_reads <- 1000 # Total reads = 1000
-read_len <- 100 # Length of each read = 100 bp
+read_len <- 100 # Length of each read = 100 bp # To make it simple, assume that all reads have the same length.
 
 ## Genomes
 # Genome A (our focus)
 size_A <- 1000 # Genome size = 1000 bp
 mapped_reads_A <- 10 # mapped reads = 10
-mapped_bases_A <- mapped_reads_A * read_len
-avg_cov_A <- mapped_bases_A / size_A # 1, in this case
+mapped_bases_A <- mapped_reads_A * read_len # To make it simple, assume that all matches are perfect.
+avg_cov_A <- mapped_bases_A / size_A
 
-
-# Genome B, C, and D
+# Genome B, C, and D (other genomes)
+# Sizes are different.
 size_B <- 500 # size = 500 bp (smaller than A)
 size_C <- 1000 # size = 1000 bp (equal to A)
 size_D <- 2000 # size = 2000 bp (larger than A)
 
+## Genome sets
+# Genome set includes Genome A and one other genome B|C|D.
 
-# Genome set includes two genomes: A and B|C|D
-# number of reads mapped to the genomes (B|C|D) : main variable
-mapped_reads <- 0:100 # same for the three genomes B|C|D
+## Analysis
+# number of metagenome reads mapped to the other genomes (B|C|D) is a variable.
+# The same range of numbers is used for the three genomes.
+mapped_reads <- 0:100
 
+# Create a table following the calculation method of CoverM.
 coverm <- data.frame(mapped_reads) %>% 
-  mutate(mapped_bases = mapped_reads * 100) %>% 
+  mutate(mapped_bases = mapped_reads * read_len) %>% 
   mutate(tot_mapped_reads = mapped_reads_A + mapped_reads) %>% 
   mutate(avg_cov_B = mapped_bases / size_B) %>% 
   mutate(avg_cov_C = mapped_bases / size_C) %>%
