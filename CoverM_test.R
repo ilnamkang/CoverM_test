@@ -1,3 +1,10 @@
+# This script is for understanding the "relative_abundance" calculation method of CoverM more clearly.
+# For various calculation methods of CoverM, refer to https://github.com/wwood/CoverM#calculation-methods.
+
+# I want to calculate the relative abundance of genome A.
+# I'd like to know what would happen to the relative abundance of genome A,
+# if I include other genomes with variable sizes that recruit variable number of metagenome reads.
+
 library(tidyverse)
 
 ## Metagenome
