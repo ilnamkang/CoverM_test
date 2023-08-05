@@ -4,6 +4,6 @@ This repository is for understanding the "relative_abundance" calculation method
 Main purpose is to analyze what would happen to the relative abundance of a specific genome, if I include other genomes with variable sizes that recruit variable number of metagenome reads.
 
 CoverM_Test.Rmd is the main file for the analysis.\
-CoverM_Test.html is just the knitted version of the Rmd file.\
+CoverM_Test.html is just the knitted version of the Rmd file.
 
 This analysis is for my own purpose, and may have errors.
