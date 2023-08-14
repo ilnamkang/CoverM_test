@@ -17,7 +17,7 @@ The ANI values among the four genomes are >99%.\
 CoverM was run with "--min-read-percent-identity 95" option.
 
 When I ran CoverM separately for each genome,\
-(Numbers in each cell indicate the number of metagenome reads recruited by the genomes.)
+(Numbers in each cell indicate the number of metagenome reads recruited by the genomes. -> i.e., "count" option of CoverM)
 |Separately|Metageome1|Metagenome2|
 |------|---|---|
 |**Genome1**|1503|1026|
