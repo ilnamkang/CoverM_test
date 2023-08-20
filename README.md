@@ -15,7 +15,7 @@ CoverM_Test.html is just the knitted version of the Rmd file.
 Besides, CoverM likely performs competitive recruitment of metagenome reads.
 
 I tested using four highly similar genomes and two metagenomes.\
-The ANI values among the four genomes are >99%.\
+The ANI values among the four genomes are >99.9%.\
 CoverM was run with "--min-read-percent-identity 95" option.
 
 When I ran CoverM separately for each genome,\
