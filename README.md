@@ -7,9 +7,14 @@ My main purpose is to analyze what would happen to the relative abundance of a s
 
 CoverM_Test.Rmd is the main file for the analysis.\
 CoverM_Test.html is just the knitted version of the Rmd file.
-
-
 <br/><br/>
+My temporary conclusions are:
+1. "Relative abundance" of a genome can be affected by the inclusion of another genome in the analysis.
+2. If the other genome is smaller than the focal genome, "relative abundance" of the focal genome decreases.
+3. If the other genome is larger than the focal genome, "relative abundance" of the focal genome increases.
+4. The degree of increase/decrease is dependent on the number of reads mapped to the other genomes.
+5. The sum of "relative abundance" reflects the number of reads mapped to any of reference genome(s) exactly.
+6. If you want a metric that is not affected by other genomes, then you may consider calculating RPKM for metagenomics, where "M" is the total number of reads used for mapping.  To this end, you may want to run CoverM using "count" or "reads_per_base" as calculation options. In this case, normalization should be performed manually.
 
 #### Competitive recruitment
 Besides, CoverM likely performs competitive recruitment of metagenome reads.
