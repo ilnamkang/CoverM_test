@@ -171,7 +171,7 @@ I think this calculation method (relative abundance) makes sense. With the sum r
 ### RPKM for metagenomics
 But, in some cases, the reference genome sets are constructed a little arbitrarily.\
 E.g., when I have to analyze environmental distribution of my new marine bacterial isolate, I may want to include some well-known genomes (e.g., SAR11) in analyses for comparison, to get more clear insights on environmental prevalence of my isolate. In this case, I can decide arbitrarily what and how many other genomes I'll include.\
-And, as shown above, this decision will impact "relative abundance" of my isolate, with the direction (increase/decrease) and degree dependent on "what and how many other genomes".
+As shown above, this decision will impact "relative abundance" of my isolate, with the direction (increase/decrease) and degree dependent on "what and how many other genomes".
 
 Therefore, if we want to analyze environmental distribution of focal genomes without the effect of other genomes included in the analyses for comparison purpose, then "relative abundance" may be not suitable.\
 
