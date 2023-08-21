@@ -170,16 +170,16 @@ I think this calculation method (relative abundance) makes sense. With the sum r
 
 ### RPKM for metagenomics
 But, in some cases, the reference genome sets are constructed a little arbitrarily.\
-E.g., when I have to analyze environmental distribution of my new marine bacterial isolate, I may want to include some well-known genomes (e.g., SAR11) in analyses for comparison, to get more clear insights on environmental prevalence of my isolate. In this case, I can decide arbitrarily what and how many other genomes I'll include.\
-As shown above, this decision will impact "relative abundance" of my isolate, with the direction (increase/decrease) and degree dependent on "what and how many other genomes".
+E.g., when I have to analyze environmental distribution of my new marine bacterial isolate, I may want to include some well-known genomes (e.g., SAR11) in analyses just for comparison, to get more clear insights on environmental prevalence of my isolate. In this case, I can decide arbitrarily what and how many other genomes I'll include.\
+As shown above, this decision will impact "relative abundance" of my isolate, with the direction (increase/decrease) and degree putatively dependent on "what and how many other genomes".
 
 Therefore, if we want to analyze environmental distribution of focal genomes without the effect of other genomes included in the analyses for comparison purpose, then "relative abundance" may be not suitable.\
 
 I think that RPKM for metagenomics can be a solution in these cases.\
 Here, RPKM is defined as "the number of mapped reads / genome size (in Kbp) / number of metagenome reads used for mapping (in million reads).\
 \
-Note that this RPKM is different from that are used widely in RNA-seq studies.\
-In RNA-seq studies, "M" in RPKM stands for **the total number of reads mapped to the reference genome(s)**. Reads that are not mapped to the reference genome(s) are disregarded.\
+Note that this RPKM is different from the "rpkm" method available in CoverM, which follows a formula widely used in RNA-seq studies.\
+As far as I know, in RNA-seq studies and the "rpkm" in CoverM, "M" in RPKM stands for **the total number of reads mapped to the reference genome(s)**. Reads that are not mapped to the reference genome(s) are disregarded.\
 
 But, here, "M" stands for **the total number of reads that were used for mapping, irrespective of whether the reads were mapped to the reference genome(s) or not**.
 
@@ -203,8 +203,8 @@ ggplot(rpkm_plot, aes(x = mapped_reads_other, y = RPKM)) +
   geom_point(aes(color = Genome))  
 ```
 
-RPKM value of any genomes are not affected by the other genomes.
-RPKM values are affected only by genome size and the number of mapped reads.
+RPKM value of any genomes, including genome A, are not affected by the other genomes.
+RPKM values are affected only by the genome sizes and and the number of reads mapped to each genome.
 
 ## Conclusion
 
